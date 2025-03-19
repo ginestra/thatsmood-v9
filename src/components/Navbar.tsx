@@ -29,7 +29,7 @@ const Navbar = () => {
       <Link to="/" className="flex items-center gap-2 no-bg">
         <div className="relative w-12 h-12 rounded-full bg-brand-yellow flex items-center justify-center animate-fade-in border-2 border-primary">
           <img 
-            src="./assets/gi-logo.svg" 
+            src="/thatsmood-v9/assets/gi-logo.svg" 
             alt="Ginestra Ferraro - UI/UX Designer" 
             className="h-8 w-8"
           />
