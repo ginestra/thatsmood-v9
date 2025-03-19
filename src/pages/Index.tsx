@@ -39,9 +39,8 @@ const Index = () => {
           </div>
           <div className="order-1 md:order-2 flex justify-center">
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full bg-brand-yellow border-[12px] border-primary flex items-center justify-center animate-fade-in">
-              <img 
-                // src="/assets/gi-logo.svg"
-                src="/assets/my-shadow.svg"
+              <img
+                src="./assets/my-shadow.svg"
                 alt="Profile"
                 className="w-[12.25em] h-[12.25em] md:w-[16.3em] md:h-[16.3em]"
               />
