@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             <div className="relative w-12 h-12 rounded-full bg-brand-yellow border-2 border-primary flex items-center justify-center animate-fade-in">
               <img 
-                src="/assets/gi-logo.svg" 
+                src="./assets/gi-logo.svg" 
                 alt="Ginestra Ferraro - UI/UX Designer" 
                 className="h-8 w-8"
               />
