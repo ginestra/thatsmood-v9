@@ -10,6 +10,32 @@
     <meta property="og:image" content="/thatsmood-v9/gi-site-preview.png" />
     <link rel="shortcut icon" href="/thatsmood-v9/gi-favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <script>
+      // Handle redirect from the 404.html page
+      (function() {
+        const redirect = new URLSearchParams(window.location.search).get('p');
+        if (redirect) {
+          const cleanRedirect = redirect.startsWith('/') ? redirect : '/' + redirect;
+          const newUrl = window.location.origin + '/thatsmood-v9' + cleanRedirect;
+          window.history.replaceState(null, null, newUrl);
+        }
+      })();
+    </script>
   </head>
 
   <body>

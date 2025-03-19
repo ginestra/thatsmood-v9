@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Single Page Apps for GitHub Pages
+    // MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    // This script takes the current URL and converts the path and query
+    // parameters into just a query parameter, then redirects to the root
+    // with that query parameter attached.
+    
+    // Handle the base path correctly for the GitHub Pages site
+    const basePath = '/thatsmood-v9';
+    
+    // Get the current path after the base path
+    const path = window.location.pathname.replace(basePath, '') || '';
+    const query = window.location.search;
+    const hash = window.location.hash;
+    
+    // Check if we're already at the root path to avoid infinite redirects
+    if (path !== '/404.html' && path !== '/404') {
+      const redirectUrl = 
+        basePath + 
+        '/?p=' + 
+        encodeURIComponent(path + query) +
+        hash;
+      
+      window.location.replace(redirectUrl);
+    }
+  </script>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+  <p>If you are not redirected automatically, <a href="/thatsmood-v9/">click here</a>.</p>
+</body>
+</html>
