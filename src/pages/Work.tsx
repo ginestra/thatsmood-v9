@@ -15,8 +15,6 @@ const Work = () => {
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             A collection of my most recent UX/UI design projects, showcasing my approach to solving user problems through thoughtful design.
           </p>
-          <p>&nbsp;</p>
-          <h2 className="text-2xl font-bold text-brand-dark dark:text-brand-yellow mb-4">Coming Soon</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -33,7 +31,7 @@ const Work = () => {
                 <span className="text-sm text-gray-500 dark:text-gray-400 mb-2 block">{project.category}</span>
                 <h3 className="text-xl font-semibold mb-2 dark:text-white">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-                <Link to={`/work/${project.id}`}>
+                <Link to={`/work/${project.slug}`}>
                   <Button variant="ghost" className="p-0 text-brand-dark dark:text-brand-yellow hover:text-black dark:hover:text-white hover:bg-transparent group">
                     View case study
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

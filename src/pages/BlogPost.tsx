@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -9,21 +8,20 @@ import { articles } from '@/data/articles';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const BlogPost = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const [article, setArticle] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (id) {
-      const articleId = parseInt(id);
-      const foundArticle = articles.find(a => a.id === articleId);
+    if (slug) {
+      const foundArticle = articles.find(a => a.slug === slug);
       
       if (foundArticle) {
         setArticle(foundArticle);
       }
       setLoading(false);
     }
-  }, [id]);
+  }, [slug]);
 
   const renderContent = (content: string) => {
     if (!content) return null;

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -9,21 +8,20 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const CaseStudy = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const [project, setProject] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (id) {
-      const projectId = parseInt(id);
-      const foundProject = projects.find(p => p.id === projectId);
+    if (slug) {
+      const foundProject = projects.find(p => p.slug === slug);
       
       if (foundProject) {
         setProject(foundProject);
       }
       setLoading(false);
     }
-  }, [id]);
+  }, [slug]);
 
   const renderContent = (content: string) => {
     if (!content) return null;

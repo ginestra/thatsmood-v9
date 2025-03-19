@@ -42,7 +42,7 @@ const Thoughts = () => {
                   <h2 className="text-xl font-semibold mb-2 dark:text-white">{article.title}</h2>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">{article.excerpt}</p>
                 </div>
-                <Link to={`/thoughts/${article.id}`}>
+                <Link to={`/thoughts/${article.slug}`}>
                   <Button variant="ghost" className="p-0 text-brand-dark dark:text-brand-yellow hover:text-black dark:hover:text-white hover:bg-transparent self-start group">
                     Read more
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

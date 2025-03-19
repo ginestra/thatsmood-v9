@@ -21,13 +21,13 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/thatsmood-v9">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/work" element={<Work />} />
-            <Route path="/work/:id" element={<CaseStudy />} />
+            <Route path="/work/:slug" element={<CaseStudy />} />
             <Route path="/thoughts" element={<Blog />} />
-            <Route path="/thoughts/:id" element={<BlogPost />} />
+            <Route path="/thoughts/:slug" element={<BlogPost />} />
             <Route path="/cv" element={<CV />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
