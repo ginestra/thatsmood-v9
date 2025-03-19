@@ -13,7 +13,7 @@ const Work = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-brand-dark dark:text-brand-yellow mb-4">Work</h1>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A collection of my most recent UX/UI design projects, showcasing my approach to solving user problems through thoughtful design.
+            A collection of my most recent UX/UI design projects, showcasing my approach to solving user problems through thoughtful design
           </p>
         </div>
 
