@@ -13,11 +13,11 @@ const Footer = () => {
             <div className="relative w-12 h-12 rounded-full bg-brand-yellow border-2 border-primary flex items-center justify-center animate-fade-in">
               <img 
                 src="/thatsmood-v9/assets/gi-logo.svg" 
-                alt="Ginestra Ferraro - UI/UX Designer" 
+                alt="Ginestra Ferraro - UI/UX/Product Designer" 
                 className="h-8 w-8"
               />
             </div>
-            <span className="text-sm font-medium text-foreground">UX Designer</span>
+            <span className="text-sm font-medium text-foreground">UI / UX &amp; Product Designer</span>
           </div>
           
           <div className="flex space-x-4">
@@ -48,17 +48,10 @@ const Footer = () => {
             >
               <Linkedin size={20} />
             </a>
-            {/* <a 
-              href="mailto:contact@example.com" 
-              aria-label="Email"
-              className="text-foreground hover:text-brand-dark transition-colors"
-            >
-              <Mail size={20} />
-            </a> */}
           </div>
           
           <p className="text-sm text-foreground">
-            © {year} / gi / UX Designer / All rights reserved
+            © {year} Ginestra Ferraro - All rights reserved
           </p>
         </div>
       </div>

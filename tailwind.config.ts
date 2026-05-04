@@ -64,7 +64,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				brand: {
-					yellow: '#FFF160',
+					yellow: '#ffda4c',
 					dark: '#232323',
 					light: '#F9F9F9',
 				}

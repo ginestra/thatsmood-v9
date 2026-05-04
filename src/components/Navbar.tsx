@@ -30,11 +30,11 @@ const Navbar = () => {
         <div className="relative w-12 h-12 rounded-full bg-brand-yellow flex items-center justify-center animate-fade-in border-2 border-primary">
           <img 
             src="/thatsmood-v9/assets/gi-logo.svg" 
-            alt="Ginestra Ferraro - UI/UX Designer" 
+            alt="Ginestra Ferraro - UI/UX/Product Designer" 
             className="h-8 w-8"
           />
         </div>
-        <span className="text-lg font-medium text-foreground">UX Designer</span>
+        <span className="text-lg font-medium text-foreground">UI / UX &amp; Product Designer</span>
       </Link>
 
       {/* Desktop Navigation */}

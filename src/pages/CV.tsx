@@ -12,9 +12,9 @@ const CV = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
           <div>
             <h1 className="text-4xl font-bold text-brand-dark dark:text-brand-yellow mb-2">Curriculum Vitae</h1>
-            <p className="text-gray-600 dark:text-gray-300">UX Designer with 10+ years of experience creating accessible digital products</p>
+            <p className="text-gray-600 dark:text-gray-300">UI / UX &amp; Product Designer with 15+ years of experience creating accessible digital products</p>
           </div>
-          <a href="/assets/docs/gferraro-cv-2025.pdf" className="button">
+          <a href="/assets/docs/gferraro-cv-2026-web.pdf" className="button">
           <Button className="flex items-center gap-2 bg-brand-dark hover:bg-black text-white">
             <Download className="h-4 w-4" />
             Download CV
@@ -157,9 +157,8 @@ const CV = () => {
               <div>
                 <h3 className="text-xl font-medium mb-4 dark:text-white">Skills</h3>
                 <div className="flex flex-wrap gap-2">
-                  {['User Research', 'Wireframing', 'Prototyping', 'Usability Testing', 
-                    'Information Architecture', 'Figma', 'Adobe XD', 'Sketch', 
-                    'Accessibility', 'Design Systems', 'HTML/CSS'].map((skill) => (
+                  {['Claude', 'Cursor', 'UI Design', 'User Research',, 'User/Agents Flows', 'Wireframing', 'Prototyping', 'Usability Testing', 
+                    'Information Architecture', 'Figma', 'Miro', 'Adobe XD', 'Sketch', 'Accessibility', 'Design Systems', 'HTML', 'CSS', 'Javascript'].map((skill) => (
                     <span key={skill} className="px-3 py-1 bg-brand-light dark:bg-gray-700 rounded-full text-sm dark:text-gray-200">
                       {skill}
                     </span>

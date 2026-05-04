@@ -18,7 +18,7 @@ const Index = () => {
               </span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-medium text-gray-700 dark:text-gray-200 mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              UX Designer focused on creating accessible digital experiences
+              Ui / UX &amp; Product Designer focused on creating accessible digital experiences
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               I'm passionate about building intuitive interfaces that solve real user problems through careful research and thoughtful design. My approach prioritizes accessibility and inclusive design principles.
