@@ -157,7 +157,7 @@ const CV = () => {
               <div>
                 <h3 className="text-xl font-medium mb-4 dark:text-white">Skills</h3>
                 <div className="flex flex-wrap gap-2">
-                  {['Claude', 'Cursor', 'UI Design', 'User Research',, 'User/Agents Flows', 'Wireframing', 'Prototyping', 'Usability Testing', 
+                  {['Claude', 'Cursor', 'UI Design', 'User Research', 'User/Agents Flows', 'Wireframing', 'Prototyping', 'Usability Testing', 
                     'Information Architecture', 'Figma', 'Miro', 'Adobe XD', 'Sketch', 'Accessibility', 'Design Systems', 'HTML', 'CSS', 'Javascript'].map((skill) => (
                     <span key={skill} className="px-3 py-1 bg-brand-light dark:bg-gray-700 rounded-full text-sm dark:text-gray-200">
                       {skill}
