@@ -43,32 +43,47 @@
   });
 
   function initThemeToggle() {
-    const toggle = document.querySelector("[data-theme-toggle]");
-    if (!toggle) return;
+    const toggles = document.querySelectorAll("[data-theme-toggle]");
 
-    const trigger = toggle.querySelector("[data-theme-trigger]");
-    const menu = toggle.querySelector("[data-theme-menu]");
-    const options = toggle.querySelectorAll("[data-theme-option]");
+    function closeToggle(toggle) {
+      toggle.querySelector("[data-theme-menu]")?.classList.remove("is-open");
+      toggle
+        .querySelector("[data-theme-trigger]")
+        ?.setAttribute("aria-expanded", "false");
+    }
 
-    trigger?.addEventListener("click", (event) => {
-      event.stopPropagation();
-      menu?.classList.toggle("is-open");
-    });
+    toggles.forEach((toggle) => {
+      const trigger = toggle.querySelector("[data-theme-trigger]");
+      const menu = toggle.querySelector("[data-theme-menu]");
+      const options = toggle.querySelectorAll("[data-theme-option]");
 
-    options.forEach((option) => {
-      option.addEventListener("click", () => {
-        const theme = option.getAttribute("data-theme-option");
-        if (theme) {
-          setTheme(theme);
-        }
-        menu?.classList.remove("is-open");
+      trigger?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const willOpen = !menu?.classList.contains("is-open");
+        toggles.forEach(closeToggle);
+        menu?.classList.toggle("is-open", willOpen);
+        trigger.setAttribute("aria-expanded", String(willOpen));
+      });
+
+      options.forEach((option) => {
+        option.addEventListener("click", () => {
+          const theme = option.getAttribute("data-theme-option");
+          if (theme) {
+            setTheme(theme);
+          }
+          closeToggle(toggle);
+        });
       });
     });
 
     document.addEventListener("click", (event) => {
-      if (!toggle.contains(event.target)) {
-        menu?.classList.remove("is-open");
-      }
+      toggles.forEach((toggle) => {
+        if (!toggle.contains(event.target)) closeToggle(toggle);
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") toggles.forEach(closeToggle);
     });
   }
 
@@ -80,12 +95,14 @@
     toggle.addEventListener("click", () => {
       const isOpen = menu.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
     });
 
     menu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         menu.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
       });
     });
   }
