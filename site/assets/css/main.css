@@ -1526,6 +1526,15 @@ ul {
   font-weight: 500;
 }
 
+.footer__build a:hover,
+.footer__build a:focus-visible {
+  color: var(--brand-dark);
+  background-color: var(--brand-yellow);
+  text-decoration: none;
+  outline: 2px solid var(--brand-yellow);
+  outline-offset: 2px;
+}
+
 /* ==========================================================================
    404
    ========================================================================== */
