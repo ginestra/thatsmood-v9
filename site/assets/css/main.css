@@ -1494,14 +1494,22 @@ ul {
 
 .footer__social a {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
   color: var(--foreground);
   text-decoration: none;
-  transition: color var(--transition);
+  transition: background-color var(--transition), color var(--transition);
 }
 
-.footer__social a:hover {
+.footer__social a:hover,
+.footer__social a:focus-visible {
   color: var(--brand-dark);
-  background: transparent;
+  background-color: var(--brand-yellow);
+  outline: 2px solid var(--brand-yellow);
+  outline-offset: 2px;
 }
 
 .footer__social svg {
