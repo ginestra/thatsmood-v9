@@ -99,13 +99,6 @@ a.no-bg:hover {
   color: var(--brand-dark);
 }
 
-a.button-link:hover .btn {
-  color: var(--brand-dark);
-  background-color: var(--accent);
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
 .dark h1 {
   color: var(--brand-yellow);
 }
@@ -511,6 +504,15 @@ ul {
   transition: background-color var(--transition), color var(--transition), border-color var(--transition);
 }
 
+.button-link:focus-visible {
+  outline: none;
+}
+
+.button-link:focus-visible .btn {
+  outline: 2px solid var(--brand-yellow);
+  outline-offset: 3px;
+}
+
 .btn svg {
   width: 1rem;
   height: 1rem;
@@ -524,6 +526,7 @@ ul {
 
 .btn--primary:hover {
   background-color: #000;
+  color: #fff;
 }
 
 .btn--outline {
@@ -534,6 +537,7 @@ ul {
 
 .btn--outline:hover {
   background-color: #f9fafb;
+  color: var(--brand-dark);
 }
 
 .dark .btn--outline {
@@ -543,6 +547,7 @@ ul {
 
 .dark .btn--outline:hover {
   background-color: var(--gray-800);
+  color: var(--gray-100);
 }
 
 .btn--ghost {
