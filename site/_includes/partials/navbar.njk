@@ -1,0 +1,59 @@
+{% from "partials/icons.njk" import icon %}
+
+<nav class="navbar" aria-label="Main navigation">
+  <a href="{{ '/' | url }}" class="navbar__brand no-bg">
+    <div class="navbar__logo animate-fade-in">
+      <img src="{{ '/assets/gi-logo.svg' | url }}" alt="Ginestra Ferraro - UI/UX/Product Designer">
+    </div>
+    <span class="navbar__brand-text">UI / UX &amp; Product Designer</span>
+  </a>
+
+  {% set navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Work', path: '/work/' },
+    { name: 'Thoughts', path: '/thoughts/' },
+    { name: 'CV', path: '/cv/' }
+  ] %}
+
+  <div class="navbar__desktop">
+    {% for item in navItems %}
+      <a
+        href="{{ item.path | url }}"
+        class="navbar__link{% if page.url | isActiveNav(item.path) %} navbar__link--active{% endif %}"
+      >
+        {{ item.name }}
+        <span class="navbar__link-underline"></span>
+      </a>
+    {% endfor %}
+    {% include "partials/theme-toggle.njk" %}
+  </div>
+
+  <div class="navbar__mobile-controls">
+    {% include "partials/theme-toggle.njk" %}
+    <button
+      type="button"
+      class="navbar__menu-toggle"
+      data-nav-toggle
+      aria-expanded="false"
+      aria-controls="mobile-nav-menu"
+      aria-label="Open menu"
+    >
+      {{ icon("menu") }}
+    </button>
+  </div>
+
+  <div class="navbar__mobile-menu" id="mobile-nav-menu" data-nav-menu>
+    <ul class="navbar__mobile-list">
+      {% for item in navItems %}
+        <li>
+          <a
+            href="{{ item.path | url }}"
+            class="navbar__mobile-link{% if page.url | isActiveNav(item.path) %} navbar__mobile-link--active{% endif %}"
+          >
+            {{ item.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

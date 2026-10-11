@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: Work
+permalink: /work/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="section container">
+  <header class="page-header">
+    <h1 class="page-header__title">Work</h1>
+    <p class="page-header__lead">
+      A collection of my most recent UX/UI design projects, showcasing my approach to solving user problems through thoughtful design
+    </p>
+  </header>
+
+  <div class="card-grid">
+    {% for project in collections.projects %}
+      <article class="project-card">
+        <div class="project-card__image-wrap">
+          <img src="{{ project.data.image }}" alt="{{ project.data.title }}">
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__category">{{ project.data.category }}</span>
+          <h2 class="project-card__title">{{ project.data.title }}</h2>
+          <p class="project-card__desc">{{ project.data.description }}</p>
+          <a href="{{ project.url }}" class="link-card no-bg">
+            <span class="btn btn--ghost">
+              View case study
+              {{ icon("arrow-right") }}
+            </span>
+          </a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

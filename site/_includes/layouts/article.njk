@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+---
+{% from "partials/icons.njk" import icon %}
+
+<article class="section container container--narrow">
+  <a href="{{ '/thoughts/' | url }}" class="article-back no-bg">
+    <span class="btn btn--ghost">
+      {{ icon("arrow-left") }}
+      Back to Thoughts
+    </span>
+  </a>
+
+  <div class="article-meta">
+    <span class="badge">{{ category }}</span>
+    <span class="thought-card__date">
+      {{ icon("calendar") }}
+      {{ date | readableDate }}
+    </span>
+  </div>
+
+  <h1 class="article-title">{{ title }}</h1>
+
+  <div class="article-hero">
+    <img src="{{ image }}" alt="{{ title }}">
+  </div>
+
+  <div class="prose">
+    <p class="article-lead">{{ excerpt }}</p>
+    {% if content %}
+      {{ content | safe }}
+    {% else %}
+      <div class="placeholder-box">
+        <p>Full article coming soon...</p>
+      </div>
+    {% endif %}
+  </div>
+</article>

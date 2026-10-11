@@ -1,0 +1,26 @@
+{% from "partials/icons.njk" import icon %}
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <div class="navbar__logo animate-fade-in">
+        <img src="{{ '/assets/gi-logo.svg' | url }}" alt="Ginestra Ferraro - UI/UX/Product Designer">
+      </div>
+      <span class="footer__brand-text">UI / UX &amp; Product Designer</span>
+    </div>
+
+    <div class="footer__social">
+      <a href="https://github.com/ginestra" target="_blank" rel="noopener noreferrer" aria-label="Ginestra on GitHub" class="no-bg">
+        {{ icon("github") }}
+      </a>
+      <a href="https://mastodon.social/@ginez_17" target="_blank" rel="noopener noreferrer" aria-label="Ginestra on Mastodon" class="no-bg">
+        {{ icon("wifi") }}
+      </a>
+      <a href="https://linkedin.com/in/ginestraferraro/" target="_blank" rel="noopener noreferrer" aria-label="Ginestra Ferraro's LinkedIn profile" class="no-bg">
+        {{ icon("linkedin") }}
+      </a>
+    </div>
+
+    <p class="footer__copy">&copy; {% currentYear %} Ginestra Ferraro - All rights reserved</p>
+  </div>
+</footer>

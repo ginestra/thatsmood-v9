@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+title: Home
+permalink: /
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="section container">
+  <div class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title animate-fade-in">
+        Hi, I'm <span class="hero__highlight">
+          <span class="hero__highlight-text">Ginestra</span>
+          <span class="hero__highlight-bar"></span>
+        </span>
+      </h1>
+      <h2 class="hero__subtitle animate-fade-in animate-fade-in--delay-1">
+        Ui / UX &amp; Product Designer focused on creating accessible digital experiences
+      </h2>
+      <p class="hero__text animate-fade-in animate-fade-in--delay-2">
+        I'm passionate about building intuitive interfaces that solve real user problems through careful research and thoughtful design. My approach prioritizes accessibility and inclusive design principles.
+      </p>
+      <div class="btn-group animate-fade-in animate-fade-in--delay-3">
+        <a href="{{ '/work/' | url }}" class="button-link no-bg">
+          <span class="btn btn--primary">
+            View my work
+            {{ icon("arrow-right") }}
+          </span>
+        </a>
+        <a href="{{ '/cv/' | url }}" class="button-link no-bg">
+          <span class="btn btn--outline">Download CV</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__avatar animate-fade-in">
+        <img src="{{ '/assets/my-shadow.svg' | url }}" alt="Profile">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <h2 class="feature-grid__heading">What I Do</h2>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <div class="feature-card__icon">{{ icon("eye") }}</div>
+        <h3 class="feature-card__title">UX Research</h3>
+        <p class="feature-card__text">Conducting user interviews, usability testing, and analysis to understand user needs</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-card__icon">{{ icon("code") }}</div>
+        <h3 class="feature-card__title">UI Design</h3>
+        <p class="feature-card__text">Creating visually appealing interfaces that align with brand identities and user expectations</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-card__icon">{{ icon("smartphone") }}</div>
+        <h3 class="feature-card__title">Accessibility</h3>
+        <p class="feature-card__text">Ensuring digital products are usable by people of all abilities and conform to WCAG guidelines</p>
+      </article>
+    </div>
+  </div>
+</section>

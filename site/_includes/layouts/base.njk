@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="{{ site.author }}">
+  <meta property="og:image" content="{{ '/gi-site-preview.png' | url }}">
+  <link rel="shortcut icon" href="{{ '/gi-favicon.png' | url }}" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+  <script>
+    (function () {
+      var storageKey = "ux-portfolio-theme";
+      var theme = localStorage.getItem(storageKey) || "system";
+      var root = document.documentElement;
+      if (theme === "system") {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      root.classList.add(theme);
+    })();
+  </script>
+</head>
+<body>
+  <div class="site-layout">
+    {% include "partials/navbar.njk" %}
+    <main class="site-main">
+      {{ content | safe }}
+    </main>
+    {% include "partials/footer.njk" %}
+  </div>
+  <script src="{{ '/assets/js/main.js' | url }}" defer></script>
+</body>
+</html>

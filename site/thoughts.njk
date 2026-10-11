@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+title: Thoughts
+permalink: /thoughts/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="section container">
+  <header class="page-header">
+    <h1 class="page-header__title">Thoughts</h1>
+    <p class="page-header__lead">
+      Thoughts, insights, and perspectives on UX design, accessibility, and creating meaningful digital experiences
+    </p>
+  </header>
+
+  <div class="thought-list">
+    {% for article in collections.thoughts %}
+      <article class="thought-card">
+        <div class="thought-card__image-wrap">
+          <img src="{{ article.data.image }}" alt="{{ article.data.title }}">
+        </div>
+        <div class="thought-card__body">
+          <div>
+            <div class="thought-card__meta">
+              <span class="badge">{{ article.data.category }}</span>
+              <span class="thought-card__date">
+                {{ icon("calendar") }}
+                {{ article.date | readableDate }}
+              </span>
+            </div>
+            <h2 class="thought-card__title">{{ article.data.title }}</h2>
+            <p class="thought-card__excerpt">{{ article.data.excerpt }}</p>
+          </div>
+          <a href="{{ article.url }}" class="link-card no-bg">
+            <span class="btn btn--ghost">
+              Read more
+              {{ icon("arrow-right") }}
+            </span>
+          </a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

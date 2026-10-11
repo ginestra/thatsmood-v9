@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Page Not Found
+permalink: /404.html
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="section container not-found">
+  <div class="not-found__inner">
+    <div class="not-found__visual">
+      <p class="not-found__code" aria-hidden="true">404</p>
+      <h1 class="not-found__title">Page Not Found</h1>
+    </div>
+    <p class="not-found__text">
+      The page you're looking for doesn't exist or has been moved.
+    </p>
+    <a href="{{ '/' | url }}" class="button-link no-bg">
+      <span class="btn btn--primary">
+        {{ icon("home") }}
+        Return Home
+      </span>
+    </a>
+  </div>
+</section>
