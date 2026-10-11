@@ -31,7 +31,7 @@ permalink: /thoughts/
             <h2 class="thought-card__title">{{ article.data.title }}</h2>
             <p class="thought-card__excerpt">{{ article.data.excerpt }}</p>
           </div>
-          <a href="{{ article.url }}" class="link-card no-bg">
+          <a href="{{ article.url | url }}" class="link-card no-bg">
             <span class="btn btn--ghost">
               Read more
               {{ icon("arrow-right") }}
