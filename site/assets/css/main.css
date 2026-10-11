@@ -1218,13 +1218,6 @@ ul {
   margin-bottom: 3rem;
 }
 
-@media (min-width: 768px) {
-  .cv-header {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
 .cv-header__title {
   font-size: 2.25rem;
   font-weight: 700;
