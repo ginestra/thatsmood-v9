@@ -1510,21 +1510,16 @@ ul {
   height: 1.25rem;
 }
 
-.footer__meta {
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .footer__meta {
-    text-align: right;
-  }
-}
-
 .footer__copy,
 .footer__build {
   font-size: 0.875rem;
   color: var(--foreground);
   margin: 0;
+}
+
+.footer__build {
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .footer__build a {
