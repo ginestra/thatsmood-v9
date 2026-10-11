@@ -525,8 +525,8 @@ ul {
 }
 
 .btn--primary:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--brand-yellow);
+  color: var(--brand-dark);
 }
 
 .btn--outline {
@@ -536,7 +536,7 @@ ul {
 }
 
 .btn--outline:hover {
-  background-color: #f9fafb;
+  background-color: var(--brand-yellow);
   color: var(--brand-dark);
 }
 
@@ -546,8 +546,8 @@ ul {
 }
 
 .dark .btn--outline:hover {
-  background-color: var(--gray-800);
-  color: var(--gray-100);
+  background-color: var(--brand-yellow);
+  color: var(--brand-dark);
 }
 
 .btn--ghost {
