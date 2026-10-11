@@ -2,6 +2,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "public/assets": "assets",
     "public/gi-favicon.svg": "gi-favicon.svg",
+    "public/gi-favicon.png": "gi-favicon.png",
+    "public/gi-site-preview.png": "gi-site-preview.png",
   });
   eleventyConfig.addPassthroughCopy({
     "site/assets/css": "assets/css",
