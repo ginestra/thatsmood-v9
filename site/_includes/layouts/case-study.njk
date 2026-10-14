@@ -14,40 +14,74 @@ layout: layouts/base.njk
   <span class="project-card__category">{{ category }}</span>
   <h1 class="article-title">{{ title }}</h1>
 
+  {% if role or timeframe or team %}
+    <dl class="case-study__meta">
+      {% if role %}
+        <div>
+          <dt>My role</dt>
+          <dd>{{ role }}</dd>
+        </div>
+      {% endif %}
+      {% if timeframe %}
+        <div>
+          <dt>Timeframe</dt>
+          <dd>{{ timeframe }}</dd>
+        </div>
+      {% endif %}
+      {% if team %}
+        <div>
+          <dt>Team</dt>
+          <dd>{{ team }}</dd>
+        </div>
+      {% endif %}
+    </dl>
+  {% endif %}
+
+  {% if capabilities %}
+    <ul class="case-study__capabilities" aria-label="Capabilities demonstrated">
+      {% for capability in capabilities %}
+        <li>{{ capability }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
   <div class="article-hero">
-    <img src="{{ image }}" alt="{{ title }}">
+    <img src="{{ image }}" alt="{{ imageAlt or '' }}">
   </div>
 
-  <div class="prose">
-    <h2>Overview</h2>
-    <p class="article-lead">{{ description }}</p>
+  <div class="prose case-study">
+    <section class="case-study__intro" aria-labelledby="case-study-overview">
+      <h2 id="case-study-overview">Overview</h2>
+      <p class="article-lead">{{ description }}</p>
+    </section>
 
     {% if challenge or approach or outcome or content %}
-      <div class="tabs" data-tabs>
-        <div class="tabs__list" role="tablist" aria-label="Case study sections">
-          <button type="button" class="tabs__trigger" role="tab" aria-selected="true" data-tab-trigger="challenge">The Challenge</button>
-          <button type="button" class="tabs__trigger" role="tab" aria-selected="false" data-tab-trigger="approach">The Approach</button>
-          <button type="button" class="tabs__trigger" role="tab" aria-selected="false" data-tab-trigger="outcome">The Outcome</button>
-          {% if content %}
-            <button type="button" class="tabs__trigger" role="tab" aria-selected="false" data-tab-trigger="details">Project Details</button>
-          {% endif %}
-        </div>
+      {% if challenge %}
+        <section class="case-study__section" aria-labelledby="case-study-challenge">
+          <h2 id="case-study-challenge">The challenge</h2>
+          <p>{{ challenge }}</p>
+        </section>
+      {% endif %}
 
-        <div class="tabs__panel is-active" data-tab-panel="challenge" role="tabpanel">
-          <p>{{ challenge or "Coming soon..." }}</p>
+      {% if approach %}
+        <section class="case-study__section" aria-labelledby="case-study-approach">
+          <h2 id="case-study-approach">The approach</h2>
+          <p>{{ approach }}</p>
+        </section>
+      {% endif %}
+
+      {% if content %}
+        <div class="case-study__section case-study__details">
+          {{ content | safe }}
         </div>
-        <div class="tabs__panel" data-tab-panel="approach" role="tabpanel">
-          <p>{{ approach or "Coming soon..." }}</p>
-        </div>
-        <div class="tabs__panel" data-tab-panel="outcome" role="tabpanel">
-          <p>{{ outcome or "Coming soon..." }}</p>
-        </div>
-        {% if content %}
-          <div class="tabs__panel" data-tab-panel="details" role="tabpanel">
-            {{ content | safe }}
-          </div>
-        {% endif %}
-      </div>
+      {% endif %}
+
+      {% if outcome %}
+        <section class="case-study__section case-study__outcome" aria-labelledby="case-study-outcome">
+          <h2 id="case-study-outcome">The outcome</h2>
+          <p>{{ outcome }}</p>
+        </section>
+      {% endif %}
     {% else %}
       <div class="placeholder-box">
         <p>Full case study coming soon...</p>

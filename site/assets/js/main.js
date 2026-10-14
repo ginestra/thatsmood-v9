@@ -39,7 +39,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     initThemeToggle();
     initMobileNav();
-    initTabs();
   });
 
   function initThemeToggle() {
@@ -107,31 +106,4 @@
     });
   }
 
-  function initTabs() {
-    document.querySelectorAll("[data-tabs]").forEach((tabsRoot) => {
-      const triggers = tabsRoot.querySelectorAll("[data-tab-trigger]");
-      const panels = tabsRoot.querySelectorAll("[data-tab-panel]");
-
-      triggers.forEach((trigger) => {
-        trigger.addEventListener("click", () => {
-          const target = trigger.getAttribute("data-tab-trigger");
-          if (!target) return;
-
-          triggers.forEach((item) => {
-            item.setAttribute(
-              "aria-selected",
-              item === trigger ? "true" : "false"
-            );
-          });
-
-          panels.forEach((panel) => {
-            panel.classList.toggle(
-              "is-active",
-              panel.getAttribute("data-tab-panel") === target
-            );
-          });
-        });
-      });
-    });
-  }
 })();

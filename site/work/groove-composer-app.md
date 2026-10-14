@@ -42,4 +42,4 @@ Based on user feedback, we're exploring several enhancements for future releases
 - Mobile app version
 - Integration with hardware controllers
 
-[Visit the live application](https://groovecomposer.app)
+[Visit the live application](https://ginestra.github.io/GrooveScribe/?)

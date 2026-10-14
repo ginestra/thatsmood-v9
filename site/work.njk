@@ -6,31 +6,111 @@ permalink: /work/
 {% from "partials/icons.njk" import icon %}
 
 <section class="section container">
-  <header class="page-header">
-    <h1 class="page-header__title">Work</h1>
+  <header class="page-header page-header--work">
+    <span class="page-header__eyebrow">Selected work</span>
+    <h1 class="page-header__title">Product strategy, design leadership and hands-on delivery</h1>
     <p class="page-header__lead">
-      A collection of my most recent UX/UI design projects, showcasing my approach to solving user problems through thoughtful design
+      I help teams turn complex customer and business challenges into clear product direction, then work with them to bring that direction to life through research, design and delivery.
     </p>
   </header>
 
-  <div class="card-grid">
+  <div class="work-featured">
     {% for project in collections.projects %}
-      <article class="project-card">
-        <div class="project-card__image-wrap">
-          <img src="{{ project.data.image }}" alt="{{ project.data.title }}">
-        </div>
-        <div class="project-card__body">
-          <span class="project-card__category">{{ project.data.category }}</span>
-          <h2 class="project-card__title">{{ project.data.title }}</h2>
-          <p class="project-card__desc">{{ project.data.description }}</p>
-          <a href="{{ project.url | url }}" class="link-card no-bg">
-            <span class="btn btn--ghost">
-              View case study
-              {{ icon("arrow-right") }}
-            </span>
-          </a>
-        </div>
-      </article>
+      {% if loop.first %}
+        <article class="project-card project-card--featured">
+          <div class="project-card__image-wrap">
+            <img src="{{ project.data.image }}" alt="{{ project.data.imageAlt or '' }}">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__eyebrow">Featured case study</span>
+            <span class="project-card__category">{{ project.data.category }}</span>
+            <h2 class="project-card__title">{{ project.data.title }}</h2>
+            <p class="project-card__desc">{{ project.data.description }}</p>
+            {% if project.data.role or project.data.impact %}
+              <dl class="project-card__meta">
+                {% if project.data.role %}
+                  <div>
+                    <dt>My role</dt>
+                    <dd>{{ project.data.role }}</dd>
+                  </div>
+                {% endif %}
+                {% if project.data.impact %}
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>{{ project.data.impact }}</dd>
+                  </div>
+                {% endif %}
+              </dl>
+            {% endif %}
+            {% if project.data.capabilities %}
+              <ul class="project-card__capabilities" aria-label="Capabilities demonstrated">
+                {% for capability in project.data.capabilities %}
+                  <li>{{ capability }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            <a href="{{ project.url | url }}" class="link-card no-bg">
+              <span class="btn btn--ghost">
+                View case study
+                {{ icon("arrow-right") }}
+              </span>
+            </a>
+          </div>
+        </article>
+      {% endif %}
     {% endfor %}
   </div>
+
+  {% if collections.projects.length > 1 %}
+    <div class="card-grid">
+      {% for project in collections.projects %}
+        {% if not loop.first %}
+          <article class="project-card">
+            <div class="project-card__image-wrap">
+              <img src="{{ project.data.image }}" alt="{{ project.data.imageAlt or '' }}">
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__category">{{ project.data.category }}</span>
+              <h2 class="project-card__title">{{ project.data.title }}</h2>
+              <p class="project-card__desc">{{ project.data.description }}</p>
+              {% if project.data.role or project.data.impact %}
+                <dl class="project-card__meta">
+                  {% if project.data.role %}
+                    <div>
+                      <dt>My role</dt>
+                      <dd>{{ project.data.role }}</dd>
+                    </div>
+                  {% endif %}
+                  {% if project.data.impact %}
+                    <div>
+                      <dt>Impact</dt>
+                      <dd>{{ project.data.impact }}</dd>
+                    </div>
+                  {% endif %}
+                </dl>
+              {% endif %}
+              {% if project.data.capabilities %}
+                <ul class="project-card__capabilities" aria-label="Capabilities demonstrated">
+                  {% for capability in project.data.capabilities %}
+                    <li>{{ capability }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              <a href="{{ project.url | url }}" class="link-card no-bg">
+                <span class="btn btn--ghost">
+                  View case study
+                  {{ icon("arrow-right") }}
+                </span>
+              </a>
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <aside class="work-context" aria-labelledby="work-context-title">
+    <h2 id="work-context-title">A note on confidential work</h2>
+    <p>Some case studies may omit or generalise commercially sensitive details. They focus on the decisions I made, how I worked with others and the impact of the work.</p>
+  </aside>
 </section>
