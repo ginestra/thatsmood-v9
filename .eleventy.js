@@ -1,3 +1,42 @@
+function categoryList(value) {
+  const values = Array.isArray(value) ? value : String(value || "").split(",");
+  const seen = new Set();
+
+  return values
+    .map((category) => String(category).trim())
+    .filter((category) => {
+      const key = category.toLocaleLowerCase("en-GB");
+      if (!category || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+}
+
+function categorySlug(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("en-GB")
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function collectionCategories(collection = []) {
+  const categories = new Map();
+
+  collection.forEach((item) => {
+    categoryList(item.data?.category).forEach((name) => {
+      const slug = categorySlug(name);
+      if (slug && !categories.has(slug)) categories.set(slug, { name, slug });
+    });
+  });
+
+  return [...categories.values()].sort((a, b) =>
+    a.name.localeCompare(b.name, "en-GB")
+  );
+}
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "public/assets": "assets",
@@ -29,6 +68,10 @@ export default function (eleventyConfig) {
       day: "numeric",
     });
   });
+
+  eleventyConfig.addFilter("categoryList", categoryList);
+  eleventyConfig.addFilter("categorySlug", categorySlug);
+  eleventyConfig.addFilter("collectionCategories", collectionCategories);
 
   eleventyConfig.addShortcode("currentYear", () =>
     String(new Date().getFullYear())

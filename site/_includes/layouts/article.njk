@@ -2,6 +2,7 @@
 layout: layouts/base.njk
 ---
 {% from "partials/icons.njk" import icon %}
+{% from "partials/category-badges.njk" import categoryBadges %}
 
 <article class="section container container--narrow">
   <a href="{{ '/thoughts/' | url }}" class="article-back no-bg">
@@ -12,7 +13,7 @@ layout: layouts/base.njk
   </a>
 
   <div class="article-meta">
-    <span class="badge">{{ category }}</span>
+    {{ categoryBadges(category, "link", "/thoughts/") }}
     <span class="thought-card__date">
       {{ icon("calendar") }}
       {{ date | readableDate }}

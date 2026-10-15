@@ -4,8 +4,10 @@ title: Work
 permalink: /work/
 ---
 {% from "partials/icons.njk" import icon %}
+{% from "partials/category-badges.njk" import categoryBadges %}
+{% set availableCategories = collections.projects | collectionCategories %}
 
-<section class="section container">
+<section class="section container" data-category-filter data-filter-singular="case study" data-filter-plural="case studies">
   <header class="page-header page-header--work">
     <span class="page-header__eyebrow">Selected work</span>
     <h1 class="page-header__title">Product strategy, design leadership and hands-on delivery</h1>
@@ -14,16 +16,30 @@ permalink: /work/
     </p>
   </header>
 
-  <div class="work-featured">
+  {% if availableCategories.length %}
+    <div class="category-filter" aria-labelledby="work-filter-label">
+      <span class="category-filter__label" id="work-filter-label">Filter by category</span>
+      <div class="category-filter__options" role="group" aria-labelledby="work-filter-label">
+        <button type="button" class="category-filter__button" data-category-option="all" aria-pressed="true">All</button>
+        {% for category in availableCategories %}
+          <button type="button" class="category-filter__button" data-category-option="{{ category.slug }}" aria-pressed="false">{{ category.name }}</button>
+        {% endfor %}
+      </div>
+      <span class="sr-only" aria-live="polite" data-filter-status></span>
+    </div>
+  {% endif %}
+
+  <div class="work-featured" data-filter-group>
     {% for project in collections.projects %}
       {% if loop.first %}
-        <article class="project-card project-card--featured">
+        {% set projectCategories = project.data.category | categoryList %}
+        <article class="project-card project-card--featured" data-category-item data-categories="{% for category in projectCategories %}{{ category | categorySlug }}{% if not loop.last %} {% endif %}{% endfor %}">
           <div class="project-card__image-wrap">
             <img src="{{ project.data.image }}" alt="{{ project.data.imageAlt or '' }}">
           </div>
           <div class="project-card__body">
             <span class="project-card__eyebrow">Featured case study</span>
-            <span class="project-card__category">{{ project.data.category }}</span>
+            {{ categoryBadges(project.data.category, "filter") }}
             <h2 class="project-card__title">{{ project.data.title }}</h2>
             {% if project.data.subtitle %}
               <p class="content-subtitle content-subtitle--card">{{ project.data.subtitle }}</p>
@@ -65,15 +81,16 @@ permalink: /work/
   </div>
 
   {% if collections.projects.length > 1 %}
-    <div class="card-grid">
+    <div class="card-grid" data-filter-group>
       {% for project in collections.projects %}
         {% if not loop.first %}
-          <article class="project-card">
+          {% set projectCategories = project.data.category | categoryList %}
+          <article class="project-card" data-category-item data-categories="{% for category in projectCategories %}{{ category | categorySlug }}{% if not loop.last %} {% endif %}{% endfor %}">
             <div class="project-card__image-wrap">
               <img src="{{ project.data.image }}" alt="{{ project.data.imageAlt or '' }}">
             </div>
             <div class="project-card__body">
-              <span class="project-card__category">{{ project.data.category }}</span>
+              {{ categoryBadges(project.data.category, "filter") }}
               <h2 class="project-card__title">{{ project.data.title }}</h2>
               {% if project.data.subtitle %}
                 <p class="content-subtitle content-subtitle--card">{{ project.data.subtitle }}</p>

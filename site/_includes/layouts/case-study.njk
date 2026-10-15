@@ -2,6 +2,7 @@
 layout: layouts/base.njk
 ---
 {% from "partials/icons.njk" import icon %}
+{% from "partials/category-badges.njk" import categoryBadges %}
 
 <article class="section container container--narrow">
   <a href="{{ '/work/' | url }}" class="article-back no-bg">
@@ -11,7 +12,7 @@ layout: layouts/base.njk
     </span>
   </a>
 
-  <span class="project-card__category">{{ category }}</span>
+  {{ categoryBadges(category, "link", "/work/") }}
   <h1 class="article-title">{{ title }}</h1>
   {% if subtitle %}
     <p class="content-subtitle content-subtitle--article">{{ subtitle }}</p>

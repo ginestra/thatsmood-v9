@@ -4,7 +4,7 @@ title: "Why is UX still an afterthought?"
 subtitle: "And are designers really the only ones struggling?"
 excerpt: "Why is UX still an afterthought? Drawing on research and experience across academia and industry, I explore the shared frustrations of designers and developers, the imbalance in resources, and what gets in the way of better collaboration."
 date: 2026-10-15
-category: UX Integration
+category: UX Integration, Design Leadership, Cross-functional Collaboration
 image: https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80
 slug: why-is-ux-still-an-afterthought
 permalink: /thoughts/{{ slug }}/
@@ -117,9 +117,15 @@ Still, that perception matters.
 
 It's difficult to establish design as an integral part of development when the people involved aren't confident that its contribution is understood.
 
-![Survey question 1](/thatsmood-v9/assets/post-images/img1.png)
+<figure>
+  <img src="{{ '/assets/post-images/img1.png' | url }}" alt="Pie chart showing that 34 respondents said their role benefits from UI/UX design processes, 8 said somewhat and 5 said no">
+  <figcaption>Survey question 1</figcaption>
+</figure>
 
-![Survey question 2](/thatsmood-v9/assets/post-images/img2.png)
+<figure>
+  <img src="{{ '/assets/post-images/img2.png' | url }}" alt="Pie chart showing whether UI/UX benefits are clear to colleagues and stakeholders: 9 yes, 13 no, 24 somewhat and 1 don't know">
+  <figcaption>Survey question 2</figcaption>
+</figure>
 
 ### Recognising value doesn't necessarily mean allocating resources
 
@@ -139,7 +145,10 @@ Without sufficient resources, it becomes difficult to demonstrate the contributi
 
 And around we go.
 
-![Survey question 3](/thatsmood-v9/assets/post-images/img3.png)
+<figure>
+  <img src="{{ '/assets/post-images/img3.png' | url }}" alt="Pie chart showing whether enough resources are assigned to UI/UX design: 6 yes, 36 no, 2 said no resources were needed and 3 didn't know">
+  <figcaption>Survey question 3</figcaption>
+</figure>
 
 ### And then there's the question of numbers
 
@@ -186,7 +195,10 @@ Perhaps that's what makes them so frustrating.
 
 We've been discussing variations of them for years, and yet they continue to appear.
 
-![Survey question 4](/thatsmood-v9/assets/post-images/img4.png)
+<figure>
+  <img src="{{ '/assets/post-images/img4.png' | url }}" alt="Bar chart rating UI/UX integration with core development processes from 1 to 5, with an average rating of 2.44">
+  <figcaption>Survey question 4</figcaption>
+</figure>
 
 ## Are designers the only ones affected?
 
@@ -268,7 +280,10 @@ But collecting feedback is only part of the challenge.
 
 It needs to be analysed, discussed and connected to decisions. Otherwise, we're just becoming better at accumulating information.
 
-![User feedback](/thatsmood-v9/assets/post-images/img5.png)
+<figure>
+  <img src="{{ '/assets/post-images/img5.png' | url }}" alt="Savio feedback dashboard listing 143 product feedback items with customer, feature and plan information">
+  <figcaption>User feedback</figcaption>
+</figure>
 
 ### 2. Make user research easier to share
 
@@ -284,7 +299,10 @@ This matters because user research shouldn't become another collection of docume
 
 The more people understand the evidence behind a design decision, the easier it becomes to have a meaningful conversation about the compromises involved.
 
-![Collaborative space](/thatsmood-v9/assets/post-images/img6.png)
+<figure>
+  <img src="{{ '/assets/post-images/img6.png' | url }}" alt="Collaborative FigJam board containing usability objectives, test tasks, participant observations, results and design iterations">
+  <figcaption>Collaborative space</figcaption>
+</figure>
 
 ### 3. Build shared resources, not separate territories
 
@@ -304,7 +322,10 @@ It was to reduce unnecessary ambiguity and make conversations between design and
 
 Whether this consistently reduces turnaround time or implementation effort requires further measurement, but the opportunity is worth investigating.
 
-![Suggested structure for collaborative work setting](/thatsmood-v9/assets/post-images/img7.png)
+<figure>
+  <img src="{{ '/assets/post-images/img7.png' | url }}" alt="Figma design-system workspace containing interface components, design explorations, notes and collaborator markers">
+  <figcaption>Suggested structure for collaborative work setting</figcaption>
+</figure>
 
 ### 4. Make responsibilities and decisions easier to follow
 
@@ -322,9 +343,15 @@ There's a balance to find here. Too little structure creates confusion, but too 
 
 The aim isn't to document every decision or prescribe how every team should work. It's to establish just enough structure to keep people aligned, without making the process itself another obstacle to getting things done.
 
-![All tasks](/thatsmood-v9/assets/post-images/img8.png)
+<figure>
+  <img src="{{ '/assets/post-images/img8.png' | url }}" alt="Shortcut project board showing work from across the organisation arranged into Ideas, Later, Soon, Small Stories, Refinement and Next columns">
+  <figcaption>All tasks</figcaption>
+</figure>
 
-![Design tasks](/thatsmood-v9/assets/post-images/img9.png)
+<figure>
+  <img src="{{ '/assets/post-images/img9.png' | url }}" alt="The same Shortcut project board filtered to show only tasks involving the design team">
+  <figcaption>Design tasks</figcaption>
+</figure>
 
 ## What the workshop added
 
@@ -366,7 +393,10 @@ As part of the investigation, I also explored a possible structure for bringing 
 
 It's a proposal, not a validated framework. And that's an important distinction. The aim was to provide a starting point for discussion and experimentation, not prescribe another process for teams to follow.
 
-![Suggested structure for collaborative work setting — Miro diagram](/thatsmood-v9/assets/post-images/img10.jpg)
+<figure>
+  <img src="{{ '/assets/post-images/decision-tree.jpg' | url }}" alt="Collaborative workflow diagram tracing feature requests through prioritisation, requirements, design, implementation, testing, release and validation, with roles involved at each stage">
+  <figcaption>Suggested structure for collaborative work setting — Miro diagram</figcaption>
+</figure>
 
 But the more I work on this, the less convinced I am that introducing a framework, on its own, will achieve very much.
 

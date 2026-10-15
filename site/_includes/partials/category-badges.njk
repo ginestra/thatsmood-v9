@@ -1,0 +1,16 @@
+{% macro categoryBadges(category, mode, baseUrl) %}
+  {% set categories = category | categoryList %}
+  {% if categories.length %}
+    <div class="category-badges" aria-label="Categories">
+      {% for item in categories %}
+        {% if mode == "filter" %}
+          <button type="button" class="badge badge--filter" data-category-option="{{ item | categorySlug }}" aria-pressed="false">{{ item }}</button>
+        {% elif mode == "link" %}
+          <a href="{{ baseUrl | url }}?category={{ item | categorySlug }}" class="badge badge--link no-bg">{{ item }}</a>
+        {% else %}
+          <span class="badge">{{ item }}</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endmacro %}

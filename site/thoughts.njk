@@ -4,8 +4,10 @@ title: Thoughts
 permalink: /thoughts/
 ---
 {% from "partials/icons.njk" import icon %}
+{% from "partials/category-badges.njk" import categoryBadges %}
+{% set availableCategories = collections.thoughts | collectionCategories %}
 
-<section class="section container">
+<section class="section container" data-category-filter data-filter-singular="article" data-filter-plural="articles">
   <header class="page-header">
     <h1 class="page-header__title">Thoughts</h1>
     <p class="page-header__lead">
@@ -13,16 +15,30 @@ permalink: /thoughts/
     </p>
   </header>
 
-  <div class="thought-list">
+  {% if availableCategories.length %}
+    <div class="category-filter" aria-labelledby="thoughts-filter-label">
+      <span class="category-filter__label" id="thoughts-filter-label">Filter by category</span>
+      <div class="category-filter__options" role="group" aria-labelledby="thoughts-filter-label">
+        <button type="button" class="category-filter__button" data-category-option="all" aria-pressed="true">All</button>
+        {% for category in availableCategories %}
+          <button type="button" class="category-filter__button" data-category-option="{{ category.slug }}" aria-pressed="false">{{ category.name }}</button>
+        {% endfor %}
+      </div>
+      <span class="sr-only" aria-live="polite" data-filter-status></span>
+    </div>
+  {% endif %}
+
+  <div class="thought-list" data-filter-group>
     {% for article in collections.thoughts %}
-      <article class="thought-card">
+      {% set articleCategories = article.data.category | categoryList %}
+      <article class="thought-card" data-category-item data-categories="{% for category in articleCategories %}{{ category | categorySlug }}{% if not loop.last %} {% endif %}{% endfor %}">
         <div class="thought-card__image-wrap">
           <img src="{{ article.data.image }}" alt="{{ article.data.title }}">
         </div>
         <div class="thought-card__body">
           <div>
             <div class="thought-card__meta">
-              <span class="badge">{{ article.data.category }}</span>
+              {{ categoryBadges(article.data.category, "filter") }}
               <span class="thought-card__date">
                 {{ icon("calendar") }}
                 {{ article.date | readableDate }}
