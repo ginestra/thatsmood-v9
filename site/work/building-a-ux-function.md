@@ -24,9 +24,10 @@ Introducing one was a start, but there wasn't a clear vision or strategy for wha
 As the team grew, requests started coming from everywhere: Marketing, Engineering, senior management. Even hackathon T-shirts.
 
 UX was becoming an on-demand service rather than an integral part of product development. And there was little consideration for the time needed to research problems, explore solutions and evaluate decisions.
+
 <figure>
-  <img src="{{ '/assets/work-images/simple_01_ux_team_evolution.svg' | url }}" alt="Unserious visual parallel with the diagram on the left showing a spinning wheel not moving (spped only), and a squiggly line moving on the right (speed with evaluation)">
-  <figcaption>Evolution of the UX team: from no designers, to a growing team dealing with competing requests</figcaption>
+  <img src="{{ '/assets/work-images/simple_02_ux_on_demand.svg' | url }}" alt="Unserious visual parallel with the diagram on the left showing a spinning wheel not moving (spped only), and a squiggly line moving on the right (speed with evaluation)">
+  <figcaption>Product, UX and Engineering collaborating on problem definition and design decisions</figcaption>
 </figure>
 
 ## My approach
@@ -55,8 +56,8 @@ Taking time to evaluate decisions might feel slower in the moment. But repeatedl
 **Established a shared design language.** Developed and encouraged adoption of a design system, from foundational styles to reusable components, supporting more consistent decisions across the product.
 
 <figure>
-  <img src="{{ '/assets/work-images/simple_02_ux_on_demand.svg' | url }}" alt="Unserious visual parallel with the diagram on the left showing a spinning wheel not moving (spped only), and a squiggly line moving on the right (speed with evaluation)">
-  <figcaption>Product, UX and Engineering collaborating on problem definition and design decisions</figcaption>
+  <img src="{{ '/assets/work-images/simple_01_ux_team_evolution.svg' | url }}" alt="Unserious visual parallel with the diagram on the left showing a spinning wheel not moving (spped only), and a squiggly line moving on the right (speed with evaluation)">
+  <figcaption>Evolution of the UX team: from no designers, to a growing team dealing with competing requests</figcaption>
 </figure>
 
 ## What changed
@@ -81,4 +82,4 @@ We made progress, even when delivery pressures made it difficult to sustain ever
 
 ---
 
-*Interested in the research behind my approach? Read **Why is UX still an afterthought?***
+Interested in the research behind my approach? Read [Why is UX still an afterthought?]({{ '/thoughts/why-is-ux-still-an-afterthought/' | url }})
