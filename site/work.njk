@@ -35,7 +35,7 @@ permalink: /work/
         {% set projectCategories = project.data.category | categoryList %}
         <article class="project-card project-card--featured" data-category-item data-categories="{% for category in projectCategories %}{{ category | categorySlug }}{% if not loop.last %} {% endif %}{% endfor %}">
           <div class="project-card__image-wrap">
-            <img src="{{ project.data.image }}" alt="{{ project.data.imageAlt or '' }}">
+            <img src="{{ project.data.image | url }}" alt="{{ project.data.imageAlt or '' }}">
           </div>
           <div class="project-card__body">
             <span class="project-card__eyebrow">Featured case study</span>
@@ -87,7 +87,7 @@ permalink: /work/
           {% set projectCategories = project.data.category | categoryList %}
           <article class="project-card" data-category-item data-categories="{% for category in projectCategories %}{{ category | categorySlug }}{% if not loop.last %} {% endif %}{% endfor %}">
             <div class="project-card__image-wrap">
-              <img src="{{ project.data.image }}" alt="{{ project.data.imageAlt or '' }}">
+              <img src="{{ project.data.image | url }}" alt="{{ project.data.imageAlt or '' }}">
             </div>
             <div class="project-card__body">
               {{ categoryBadges(project.data.category, "filter") }}
