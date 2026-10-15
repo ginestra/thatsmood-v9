@@ -13,6 +13,9 @@ layout: layouts/base.njk
 
   <span class="project-card__category">{{ category }}</span>
   <h1 class="article-title">{{ title }}</h1>
+  {% if subtitle %}
+    <p class="content-subtitle content-subtitle--article">{{ subtitle }}</p>
+  {% endif %}
 
   {% if role or timeframe or team %}
     <dl class="case-study__meta">

@@ -941,6 +941,21 @@ ul {
   color: #fff;
 }
 
+.content-subtitle {
+  color: var(--gray-600);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.dark .content-subtitle {
+  color: var(--gray-300);
+}
+
+.content-subtitle--card {
+  margin: -0.25rem 0 0.75rem;
+  font-size: 0.875rem;
+}
+
 .project-card__desc,
 .thought-card__excerpt {
   color: var(--gray-600);
@@ -1148,6 +1163,11 @@ ul {
 
 .dark .article-title {
   color: var(--brand-yellow);
+}
+
+.content-subtitle--article {
+  margin: -0.75rem 0 1.5rem;
+  font-size: 1rem;
 }
 
 .article-hero {

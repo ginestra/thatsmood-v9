@@ -25,6 +25,9 @@ permalink: /work/
             <span class="project-card__eyebrow">Featured case study</span>
             <span class="project-card__category">{{ project.data.category }}</span>
             <h2 class="project-card__title">{{ project.data.title }}</h2>
+            {% if project.data.subtitle %}
+              <p class="content-subtitle content-subtitle--card">{{ project.data.subtitle }}</p>
+            {% endif %}
             <p class="project-card__desc">{{ project.data.description }}</p>
             {% if project.data.role or project.data.impact %}
               <dl class="project-card__meta">
@@ -72,6 +75,9 @@ permalink: /work/
             <div class="project-card__body">
               <span class="project-card__category">{{ project.data.category }}</span>
               <h2 class="project-card__title">{{ project.data.title }}</h2>
+              {% if project.data.subtitle %}
+                <p class="content-subtitle content-subtitle--card">{{ project.data.subtitle }}</p>
+              {% endif %}
               <p class="project-card__desc">{{ project.data.description }}</p>
               {% if project.data.role or project.data.impact %}
                 <dl class="project-card__meta">

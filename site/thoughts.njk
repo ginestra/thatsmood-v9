@@ -29,6 +29,9 @@ permalink: /thoughts/
               </span>
             </div>
             <h2 class="thought-card__title">{{ article.data.title }}</h2>
+            {% if article.data.subtitle %}
+              <p class="content-subtitle content-subtitle--card">{{ article.data.subtitle }}</p>
+            {% endif %}
             <p class="thought-card__excerpt">{{ article.data.excerpt }}</p>
           </div>
           <a href="{{ article.url | url }}" class="link-card no-bg">
