@@ -467,10 +467,6 @@ ul {
    ========================================================================== */
 
 .theme-toggle {
-  position: relative;
-}
-
-.theme-toggle__trigger {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -484,8 +480,8 @@ ul {
   cursor: pointer;
 }
 
-.theme-toggle__trigger:hover,
-.theme-toggle__trigger:focus-visible {
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
   color: var(--brand-dark);
   background-color: var(--brand-yellow);
   outline: 2px solid var(--brand-yellow);
@@ -511,46 +507,6 @@ ul {
 
 .dark .theme-toggle__icon--moon {
   display: block;
-}
-
-.theme-toggle__menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  right: 0;
-  min-width: 8rem;
-  padding: 0.25rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background-color: var(--background);
-  box-shadow: var(--shadow-md);
-  z-index: 100;
-}
-
-.theme-toggle__menu.is-open {
-  display: block;
-}
-
-.theme-toggle__option {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  padding: 0.5rem 0.75rem;
-  border: none;
-  border-radius: calc(var(--radius) - 2px);
-  background: transparent;
-  color: var(--foreground);
-  font-size: 0.875rem;
-  text-align: left;
-  cursor: pointer;
-}
-
-.theme-toggle__option:hover,
-.theme-toggle__option:focus-visible {
-  color: var(--brand-dark);
-  background-color: var(--brand-yellow);
-  outline: none;
 }
 
 /* ==========================================================================

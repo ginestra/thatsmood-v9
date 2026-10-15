@@ -2,23 +2,20 @@
   const storageKey = "ux-portfolio-theme";
 
   function getStoredTheme() {
-    return localStorage.getItem(storageKey) || "system";
+    const theme = localStorage.getItem(storageKey);
+    return theme === "light" || theme === "dark" ? theme : null;
+  }
+
+  function getSystemTheme() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
   }
 
   function applyTheme(theme) {
     const root = document.documentElement;
     root.classList.remove("light", "dark");
-
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-      root.classList.add(systemTheme);
-      return;
-    }
-
-    root.classList.add(theme);
+    root.classList.add(theme || getSystemTheme());
   }
 
   function setTheme(theme) {
@@ -31,8 +28,9 @@
   window
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", () => {
-      if (getStoredTheme() === "system") {
-        applyTheme("system");
+      if (!getStoredTheme()) {
+        applyTheme(null);
+        updateThemeToggles();
       }
     });
 
@@ -45,46 +43,24 @@
 
   function initThemeToggle() {
     const toggles = document.querySelectorAll("[data-theme-toggle]");
-
-    function closeToggle(toggle) {
-      toggle.querySelector("[data-theme-menu]")?.classList.remove("is-open");
-      toggle
-        .querySelector("[data-theme-trigger]")
-        ?.setAttribute("aria-expanded", "false");
-    }
-
     toggles.forEach((toggle) => {
-      const trigger = toggle.querySelector("[data-theme-trigger]");
-      const menu = toggle.querySelector("[data-theme-menu]");
-      const options = toggle.querySelectorAll("[data-theme-option]");
-
-      trigger?.addEventListener("click", (event) => {
-        event.stopPropagation();
-        const willOpen = !menu?.classList.contains("is-open");
-        toggles.forEach(closeToggle);
-        menu?.classList.toggle("is-open", willOpen);
-        trigger.setAttribute("aria-expanded", String(willOpen));
-      });
-
-      options.forEach((option) => {
-        option.addEventListener("click", () => {
-          const theme = option.getAttribute("data-theme-option");
-          if (theme) {
-            setTheme(theme);
-          }
-          closeToggle(toggle);
-        });
+      toggle.addEventListener("click", () => {
+        const currentTheme = document.documentElement.classList.contains("dark")
+          ? "dark"
+          : "light";
+        setTheme(currentTheme === "dark" ? "light" : "dark");
+        updateThemeToggles();
       });
     });
+    updateThemeToggles();
+  }
 
-    document.addEventListener("click", (event) => {
-      toggles.forEach((toggle) => {
-        if (!toggle.contains(event.target)) closeToggle(toggle);
-      });
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") toggles.forEach(closeToggle);
+  function updateThemeToggles() {
+    const isDark = document.documentElement.classList.contains("dark");
+    document.querySelectorAll("[data-theme-toggle]").forEach((toggle) => {
+      const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+      toggle.setAttribute("aria-label", label);
+      toggle.setAttribute("title", label);
     });
   }
 

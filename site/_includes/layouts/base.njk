@@ -15,7 +15,10 @@
   <script>
     (function () {
       var storageKey = "ux-portfolio-theme";
-      var theme = localStorage.getItem(storageKey) || "system";
+      var storedTheme = localStorage.getItem(storageKey);
+      var theme = storedTheme === "light" || storedTheme === "dark"
+        ? storedTheme
+        : "system";
       var root = document.documentElement;
       if (theme === "system") {
         theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";

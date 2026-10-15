@@ -1,29 +1,11 @@
 {% from "partials/icons.njk" import icon %}
 
-<div class="theme-toggle" data-theme-toggle>
-  <button
-    type="button"
-    class="theme-toggle__trigger"
-    data-theme-trigger
-    aria-label="Choose colour theme"
-    aria-haspopup="true"
-    aria-expanded="false"
-  >
-    {{ icon("sun", "theme-toggle__icon theme-toggle__icon--sun") }}
-    {{ icon("moon", "theme-toggle__icon theme-toggle__icon--moon") }}
-    <span class="sr-only">Toggle theme</span>
-  </button>
-  <div class="theme-toggle__menu" data-theme-menu role="menu">
-    <button type="button" class="theme-toggle__option" data-theme-option="light">
-      {{ icon("sun", "theme-toggle__icon") }}
-      <span>Light</span>
-    </button>
-    <button type="button" class="theme-toggle__option" data-theme-option="dark">
-      {{ icon("moon", "theme-toggle__icon") }}
-      <span>Dark</span>
-    </button>
-    <button type="button" class="theme-toggle__option" data-theme-option="system">
-      <span>System</span>
-    </button>
-  </div>
-</div>
+<button
+  type="button"
+  class="theme-toggle"
+  data-theme-toggle
+  aria-label="Switch colour theme"
+>
+  {{ icon("sun", "theme-toggle__icon theme-toggle__icon--sun") }}
+  {{ icon("moon", "theme-toggle__icon theme-toggle__icon--moon") }}
+</button>
